@@ -39,7 +39,6 @@ namespace anntgc00492Shop.Model.Models
         public string PaymentStatus { set; get; }
 
         [Required]
-        [MaxLength(100)]
         public DateTime CreatedDate { set; get; }
         [Required]
         [MaxLength(100)]

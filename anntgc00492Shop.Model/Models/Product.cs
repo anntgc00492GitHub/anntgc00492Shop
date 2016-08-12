@@ -31,7 +31,6 @@ namespace anntgc00492Shop.Model.Models
         public string Description { set; get; }
         [MaxLength(500)]
         public string Content { set; get; }
-        [MaxLength(50)]
 
         public decimal OriginalPrice { set; get; }
         public decimal Price { set; get; }
