@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace anntgc00492Shop.Model.Models
 {
-    [Table("VistorStatistics")]
-    public class VistorStatistic
+    [Table("VisitorStatistics")]
+    public class VisitorStatistic
     {
         [Key]
         public Guid Id { set; get; }
