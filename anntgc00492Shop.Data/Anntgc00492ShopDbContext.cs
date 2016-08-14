@@ -36,7 +36,7 @@ namespace anntgc00492Shop.Data
         public DbSet<Page> Pages { set; get; }
         public DbSet<SupportOnline> SupportOnlines { set; get; }
         public DbSet<SystemConfig> SystemConfigs { set; get; }
-        public DbSet<VistorStatistic> VistorStatistics { set; get; }
+        public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {

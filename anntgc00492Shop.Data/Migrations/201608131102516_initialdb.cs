@@ -3,7 +3,7 @@ namespace anntgc00492Shop.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialDB : DbMigration
+    public partial class initialdb : DbMigration
     {
         public override void Up()
         {
@@ -244,7 +244,7 @@ namespace anntgc00492Shop.Data.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.VistorStatistics",
+                "dbo.VisitorStatistics",
                 c => new
                     {
                         Id = c.Guid(nullable: false),
@@ -275,7 +275,7 @@ namespace anntgc00492Shop.Data.Migrations
             DropIndex("dbo.OrderDetails", new[] { "ProductId" });
             DropIndex("dbo.OrderDetails", new[] { "OrderId" });
             DropIndex("dbo.Menu", new[] { "MenuGroupId" });
-            DropTable("dbo.VistorStatistics");
+            DropTable("dbo.VisitorStatistics");
             DropTable("dbo.SystemConfigs");
             DropTable("dbo.SupportOnlines");
             DropTable("dbo.Slides");
