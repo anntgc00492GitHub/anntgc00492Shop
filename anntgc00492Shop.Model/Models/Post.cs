@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using anntgc00492Shop.Model.Abstract;
 
 namespace anntgc00492Shop.Model.Models
 {
     [Table("Posts")]
-    public class Post
+    public class Post:Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

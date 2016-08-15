@@ -5,8 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using anntgc00492Shop.Data;
+using anntgc00492Shop.Data.Infrastructure;
 
-namespace anntgc00492Shop.Data.Infrastructure
+namespace Anntgc00492Shop.Data.Infrastructure
 {
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
