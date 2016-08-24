@@ -57,13 +57,13 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\ReponsitoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201608131102516_initialdb.cs" />
-    <Compile Include="Migrations\201608131102516_initialdb.Designer.cs">
-      <DependentUpon>201608131102516_initialdb.cs</DependentUpon>
+    <Compile Include="Migrations\201608211005443_KhoiTaoDB.cs" />
+    <Compile Include="Migrations\201608211005443_KhoiTaoDB.Designer.cs">
+      <DependentUpon>201608211005443_KhoiTaoDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608131235558_initialdb1.cs" />
-    <Compile Include="Migrations\201608131235558_initialdb1.Designer.cs">
-      <DependentUpon>201608131235558_initialdb1.cs</DependentUpon>
+    <Compile Include="Migrations\201608221454166_chinhLaiPostCategory.cs" />
+    <Compile Include="Migrations\201608221454166_chinhLaiPostCategory.Designer.cs">
+      <DependentUpon>201608221454166_chinhLaiPostCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,11 +100,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608131102516_initialdb.resx">
-      <DependentUpon>201608131102516_initialdb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608211005443_KhoiTaoDB.resx">
+      <DependentUpon>201608211005443_KhoiTaoDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608131235558_initialdb1.resx">
-      <DependentUpon>201608131235558_initialdb1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608221454166_chinhLaiPostCategory.resx">
+      <DependentUpon>201608221454166_chinhLaiPostCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

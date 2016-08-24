@@ -3,7 +3,7 @@ namespace anntgc00492Shop.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialdb : DbMigration
+    public partial class KhoiTaoDB : DbMigration
     {
         public override void Up()
         {
@@ -26,7 +26,7 @@ namespace anntgc00492Shop.Data.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Menu",
+                "dbo.Menus",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -159,6 +159,13 @@ namespace anntgc00492Shop.Data.Migrations
                         HomeFlag = c.Boolean(),
                         HotFlag = c.Boolean(),
                         ViewCount = c.Int(),
+                        CreatedDate = c.DateTime(),
+                        CreatedBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
+                        MetaKeyword = c.String(maxLength: 256),
+                        MetaDescription = c.String(maxLength: 256),
+                        Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.PostCategories", t => t.PostCategoryId, cascadeDelete: true)
@@ -265,7 +272,7 @@ namespace anntgc00492Shop.Data.Migrations
             DropForeignKey("dbo.OrderDetails", "ProductId", "dbo.Products");
             DropForeignKey("dbo.Products", "CategoryId", "dbo.ProductCategories");
             DropForeignKey("dbo.OrderDetails", "OrderId", "dbo.Orders");
-            DropForeignKey("dbo.Menu", "MenuGroupId", "dbo.MenuGroups");
+            DropForeignKey("dbo.Menus", "MenuGroupId", "dbo.MenuGroups");
             DropIndex("dbo.ProductTags", new[] { "TagId" });
             DropIndex("dbo.ProductTags", new[] { "ProductId" });
             DropIndex("dbo.PostTags", new[] { "TagId" });
@@ -274,7 +281,7 @@ namespace anntgc00492Shop.Data.Migrations
             DropIndex("dbo.Products", new[] { "CategoryId" });
             DropIndex("dbo.OrderDetails", new[] { "ProductId" });
             DropIndex("dbo.OrderDetails", new[] { "OrderId" });
-            DropIndex("dbo.Menu", new[] { "MenuGroupId" });
+            DropIndex("dbo.Menus", new[] { "MenuGroupId" });
             DropTable("dbo.VisitorStatistics");
             DropTable("dbo.SystemConfigs");
             DropTable("dbo.SupportOnlines");
@@ -289,7 +296,7 @@ namespace anntgc00492Shop.Data.Migrations
             DropTable("dbo.Products");
             DropTable("dbo.Orders");
             DropTable("dbo.OrderDetails");
-            DropTable("dbo.Menu");
+            DropTable("dbo.Menus");
             DropTable("dbo.MenuGroups");
             DropTable("dbo.Footers");
         }

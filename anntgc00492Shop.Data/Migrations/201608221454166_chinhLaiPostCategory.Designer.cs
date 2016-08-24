@@ -7,13 +7,13 @@ namespace anntgc00492Shop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initialdb1 : IMigrationMetadata
+    public sealed partial class chinhLaiPostCategory : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialdb1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(chinhLaiPostCategory));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608131235558_initialdb1"; }
+            get { return "201608221454166_chinhLaiPostCategory"; }
         }
         
         string IMigrationMetadata.Source

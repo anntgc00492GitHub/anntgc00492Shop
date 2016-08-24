@@ -7,13 +7,13 @@ namespace anntgc00492Shop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initialdb : IMigrationMetadata
+    public sealed partial class KhoiTaoDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialdb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(KhoiTaoDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608131102516_initialdb"; }
+            get { return "201608211005443_KhoiTaoDB"; }
         }
         
         string IMigrationMetadata.Source

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace anntgc00492Shop.Data.Infrastructure
 {
-    class DbFactory:Disposable,IDbFactory
+    public class DbFactory:Disposable,IDbFactory
     {
         private Anntgc00492ShopDbContext dbContext;
 

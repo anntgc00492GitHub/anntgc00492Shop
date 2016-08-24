@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using anntgc00492Shop.Model.Abstract;
 
 namespace anntgc00492Shop.Model.Models
 {
     [Table("ProductCategories")]
-    public class ProductCategory
+    public class ProductCategory:Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
