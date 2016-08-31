@@ -49,7 +49,8 @@ namespace anntgc00492Shop.Service
 
         public IEnumerable<PostCategory> GetAll()
         {
-            return _postCategoryRepository.GetAll();
+            var list=_postCategoryRepository.GetAll();
+            return list;
         }
 
         public IEnumerable<PostCategory> GetAllByParentId(int parentId)

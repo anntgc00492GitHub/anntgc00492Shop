@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using anntgc00492Shop.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace anntgc00492Shop.Data
 {
-    public class Anntgc00492ShopDbContext:DbContext
+    public class Anntgc00492ShopDbContext: IdentityDbContext<ApplicationUser>
     {
         public Anntgc00492ShopDbContext():base("Anntgc00492ShopConnection")
         {
@@ -37,10 +38,19 @@ namespace anntgc00492Shop.Data
         public DbSet<SupportOnline> SupportOnlines { set; get; }
         public DbSet<SystemConfig> SystemConfigs { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
+        public DbSet<Error> Errors { set; get; }
+
+        public static Anntgc00492ShopDbContext Create()
+        {
+            return new Anntgc00492ShopDbContext();
+        }
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
+            builder.Entity<IdentityRole>().ToTable("ApplicationRoles");
+            builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
         }
 
     }

@@ -15,6 +15,10 @@ namespace anntgc00492Shop.Model.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { set; get; }
 
+        [StringLength(128)]
+        [Column(TypeName = "nvarchar")]
+        public string CustomerId { set; get; }
+
         [Required]
         [MaxLength(100)]
         public string CustomerName { set; get; }
@@ -26,7 +30,7 @@ namespace anntgc00492Shop.Model.Models
         public string CustomerEmail { set; get; }
         [Required]
         [MaxLength(100)]
-        public string CusotmerMobile { set; get; }
+        public string CustomerMobile { set; get; }
         [Required]
         [MaxLength(100)]
         public string CustomerMessage { set; get; }
@@ -43,6 +47,8 @@ namespace anntgc00492Shop.Model.Models
         [Required]
         [MaxLength(100)]
         public string CreatedBy { set; get; }
+
+        public bool Status { set; get; }
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }

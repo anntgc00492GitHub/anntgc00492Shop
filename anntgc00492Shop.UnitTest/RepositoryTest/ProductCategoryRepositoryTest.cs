@@ -38,7 +38,7 @@ namespace anntgc00492Shop.UnitTest.RepositoryTest
         public void ProductCategory_GetAll()
         {
             var productCategoryList = productCategoryRespository.GetAll().ToList();
-            Assert.AreEqual(2,productCategoryList.Count);
+            Assert.AreEqual(1,productCategoryList.Count);
         }
     }
 }
