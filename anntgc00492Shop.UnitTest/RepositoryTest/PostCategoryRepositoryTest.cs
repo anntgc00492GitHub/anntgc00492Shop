@@ -29,7 +29,8 @@ namespace anntgc00492Shop.UnitTest.RepositoryTest
         [TestMethod]
         public void PostCategory_Repository_Create()
         {
-            PostCategory category = new PostCategory();
+            PostCategory category = null;
+            category=new PostCategory();
             category.Name = "Test category2";
             category.Alias = "Test-category2";
             category.Status = true;
