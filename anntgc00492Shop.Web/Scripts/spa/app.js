@@ -43,11 +43,18 @@ function KiemTraDuLieuService($window) {
 
 myApp.controller("TrinhKiemTra", TrinhKiemTra);
 TrinhKiemTra.$inject = ["$scope", "KiemTraDuLieuService"];
-
 function TrinhKiemTra($scope, KiemTraDuLieuService) {
     $scope.giatrinhapvao = 2;
     $scope.clicButtonEvent = function () {
         $scope.ketquakiemtra = KiemTraDuLieuService.KiemTraChanLe($scope.giatrinhapvao);
+    }
+}
+
+myApp.directive("anntgcShopDirective", anntgcShopDirective);
+function anntgcShopDirective() {
+    return {
+        restrict: "A",
+        templateUrl: "/Scripts/spa/anntgc00492ShopDirective.html"
     }
 }
 
