@@ -21,7 +21,7 @@ namespace anntgc00492Shop.Web.Models
 
         public virtual IEnumerable<ProductViewModel> Products { set; get; }
 
-        public DateTime CreateDate { set; get; }
+        public DateTime CreatedDate { set; get; }
         public string CreatedBy { set; get; }
         public DateTime? UpdatedDate { set; get; }
         public string UpdatedBy { set; get; }

@@ -67,7 +67,7 @@ namespace anntgc00492Shop.Web.Infrastructure.Extensions
             productCategory.DisplayOrder = productCategoryVm.DisplayOrder;
             productCategory.HomeFlag = productCategoryVm.HomeFlag;
 
-            productCategory.CreatedDate = productCategoryVm.CreateDate;
+            productCategory.CreatedDate = productCategoryVm.CreatedDate;
             productCategory.CreatedBy = productCategoryVm.CreatedBy;
             productCategory.UpdatedDate = productCategoryVm.UpdatedDate;
             productCategory.UpdatedBy = productCategoryVm.UpdatedBy;

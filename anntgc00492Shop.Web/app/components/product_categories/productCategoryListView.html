@@ -12,7 +12,7 @@
 
 
 <!-- Main content -->
-<section class="content"> 
+<section class="content">
 
     <!-- Default box -->
     <div class="box">
@@ -36,18 +36,30 @@
                             <table class="table table-condensed">
                                 <tbody>
                                     <tr>
-                                        <th style="width: 10px">Id</th>
-                                        <th>Tên danh mục</th>
-                                        <th>Ngày tạo</th>
-                                        <th style="width: 40px">Trạng thái</th>
+                                        <th style="width: 5px">Id</th>
+                                        <th style="width: 55px">Tên danh mục</th>
+                                        <th style="width: 20px">Ngày tạo</th>
+                                        <th style="width: 10px">Trạng thái</th>
+                                        <th style="width: 10px">Thao Tac</th>
                                     </tr>
                                     <tr ng-repeat="item in productCategories">
                                         <td>{{item.Id}}</td>
-                                        <td>{{item.CreatedDate}}</td>
+
                                         <td>
                                             {{item.Name}}
                                         </td>
-                                        <td><span class="badge bg-green">{{item.Status}}</span></td>
+                                        <td>
+                                            {{item.CreatedDate | date:'dd/mm/yyyy'}}
+                                        </td>
+                                        <td>
+                                            <span ng-class="{'badge bg-green':item.Status==true,'badge bg-red':item.Status==false}">
+                                                {{item.Status | statusFilter}}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary "><i class="fa fa-pencil">Sửa</i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash">Xóa</i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -59,7 +71,7 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-            
+
         </div>
         <!-- /.box-footer-->
     </div>
