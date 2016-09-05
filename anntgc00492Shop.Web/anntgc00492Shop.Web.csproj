@@ -237,13 +237,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\app.routes.js" />
-    <Content Include="app\components\product_categories\productAddController.js" />
-    <Content Include="app\components\product_categories\productAddView.html" />
-    <Content Include="app\components\product_categories\productEditController.js" />
-    <Content Include="app\components\product_categories\productEditView.html" />
-    <Content Include="app\components\product_categories\productListController.js" />
-    <Content Include="app\components\product_categories\productListView.html" />
+    <Content Include="app\components\home\homeController.js" />
+    <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\products\productAddController.js" />
+    <Content Include="app\components\products\productAddView.html" />
+    <Content Include="app\components\products\productEditController.js" />
+    <Content Include="app\components\products\productEditView.html" />
+    <Content Include="app\components\products\productListController.js" />
+    <Content Include="app\components\products\productListView.html" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\skins\skin-black-light.css" />
@@ -4331,7 +4332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
-    <Folder Include="app\components\products\" />
+    <Folder Include="app\components\product_categories\" />
     <Folder Include="app\components\roles\" />
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
@@ -4648,6 +4649,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\components\products\products.modules.js" />
+    <Content Include="app\shared\modules\anntgc00492Shop.common.js" />
     <TypeScriptCompile Include="Assets\Admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Assets\Admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Assets\Admin\libs\ngBootbox\typings\tsd.d.ts" />
