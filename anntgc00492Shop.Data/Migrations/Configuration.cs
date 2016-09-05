@@ -1,3 +1,4 @@
+﻿using System.Collections.Generic;
 using anntgc00492Shop.Model.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -18,7 +19,8 @@ namespace anntgc00492Shop.Data.Migrations
 
         protected override void Seed(anntgc00492Shop.Data.Anntgc00492ShopDbContext context)
         {
-            CreateUser(context);
+            //CreateUser(context);
+            CreateProductCategorySample(context);
         }
 
         private void CreateUser(Anntgc00492ShopDbContext context)
@@ -48,6 +50,23 @@ namespace anntgc00492Shop.Data.Migrations
             var adminUser = manager.FindByEmail("anntgc00492@fpt.edu.vn");
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+        }
+
+
+        private void CreateProductCategorySample(Anntgc00492ShopDbContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
+            {
+                List<ProductCategory> listProductCategory = new List<ProductCategory>
+            {
+                new ProductCategory() {Name = "Điện Lạnh",Alias = "dien-lanh",Status = true},
+                new ProductCategory() {Name = "Viễn Thông",Alias = "vien-thong",Status = true},
+                new ProductCategory() {Name = "Đồ gia dụng",Alias = "do-gia-dung",Status = true},
+            };
+                context.ProductCategories.AddRange(listProductCategory);
+                context.SaveChanges();
+            }
+
         }
     }
 }

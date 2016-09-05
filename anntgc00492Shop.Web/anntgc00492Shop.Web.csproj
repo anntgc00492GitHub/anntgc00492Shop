@@ -245,6 +245,9 @@
     <Content Include="app\components\products\productEditView.html" />
     <Content Include="app\components\products\productListController.js" />
     <Content Include="app\components\products\productListView.html" />
+    <Content Include="app\components\product_categories\productCategoryListView.html" />
+    <Content Include="app\components\product_categories\productCategoryListController.js" />
+    <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\skins\skin-black-light.css" />
@@ -4332,12 +4335,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
-    <Folder Include="app\components\product_categories\" />
     <Folder Include="app\components\roles\" />
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\service\" />
     <Folder Include="Assets\Admin\libs\checklist-model\test\" />
     <Folder Include="Assets\client\" />
   </ItemGroup>
@@ -4627,6 +4628,7 @@
     <Content Include="Assets\Admin\libs\toastr\toastr.js.map" />
     <Content Include="Assets\Admin\libs\toastr\toastr.less" />
     <Content Include="Assets\Admin\libs\toastr\toastr.scss" />
+    <Content Include="app\components\product_categories\productCategories.modules.js" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>

@@ -16,7 +16,7 @@ using AutoMapper;
 
 namespace anntgc00492Shop.Web.Api
 {
-    [Route("api/productCategory")]
+    [RoutePrefix("api/productCategory")]
     public class ProductCategoryController : ApiControllerBase
     {
         private IProductCategoryService _productCategoryService;
@@ -26,6 +26,7 @@ namespace anntgc00492Shop.Web.Api
         {
             this._productCategoryService = productCategoryService;
         }
+
 
         [Route("getallparents")]
         [HttpGet]

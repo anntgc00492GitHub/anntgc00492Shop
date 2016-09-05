@@ -26,8 +26,8 @@ namespace anntgc00492Shop.UnitTest.RepositoryTest
         public void ProductCategory_Repository_Create()
         {
             ProductCategory productCategory=new ProductCategory();
-            productCategory.Name = "This is test product name 2";
-            productCategory.Alias = "This is test product Alias";
+            productCategory.Name = "product category  name 1";
+            productCategory.Alias = "product category alias 1";
             var result = productCategoryRespository.Add(productCategory);
             unitOfWork.Commit();
             Assert.IsNotNull(result);

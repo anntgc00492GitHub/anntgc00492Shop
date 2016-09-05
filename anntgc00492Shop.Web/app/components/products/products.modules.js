@@ -2,7 +2,7 @@
     angular.module("anntgc00492Shop.products", ['anntgc00492Shop.common']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('productList', {
+        $stateProvider.state('products', {
             url: "/products",
             templateUrl: "/app/components/products/productListView.html",
             controller: "productListController"
