@@ -13,12 +13,10 @@
 
 <!-- Main content -->
 <section class="content">
-
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title">Danh mục sản phẩm</h3>
-
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                     <i class="fa fa-minus"></i>
@@ -37,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            <br/>
             <div class="row">
                 <div class="col-md-12">
                     <div class="box">
@@ -69,11 +68,11 @@
                                             <button class="btn btn-sm btn-danger"><i class="fa fa-trash">Xóa</i></button>
                                         </td>
                                     </tr>
-                                <tfooter>
-                                    <tr>
-                                        <td colspan="5">Tổng số bản ghi:{{totalCount}}</td>
-                                    </tr>
-                                </tfooter>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5"><span class="pull-right">Trang:{{page+1}}-Tổng số bản ghi:{{totalCount}}</span></td>
+                                        </tr>
+                                    </tfoot>
 
                                 </tbody>
                             </table>

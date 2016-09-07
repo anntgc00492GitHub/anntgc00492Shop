@@ -17,6 +17,7 @@
     <!-- Theme style -->
     @*<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">*@
     <link href="~/Assets/Admin/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/libs/toastr/toastr.css" rel="stylesheet" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     @*<link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">*@
@@ -614,24 +615,30 @@
     <!--being embed angular js-->
     <script src="~/Assets/Admin/libs/angular/angular.js"></script>
     <script src="~/Assets/Admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/Assets/Admin/libs/toastr/toastr.js"></script>
+
+    <script src="~/app/app.js"></script>
     <script src="~/app/shared/modules/anntgc00492Shop.common.js"></script>
+
+   <script src="~/app/shared/services/notificationService.js"></script>
     <script src="~/app/shared/filters/statusFilter.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
+    <script src="~/app/shared/services/notificationService.js"></script>
+
+
+
+    <script src="~/app/components/home/homeController.js"></script>
 
     <script src="~/app/shared/services/apiService.js"></script>
-    <script src="~/app/shared/directives/pagerDirective.js"></script>
-
-<script src="~/app/components/products/products.modules.js"></script>
-    <script src="~/app/components/product_categories/productCategories.modules.js"></script>
-    <script src="~/app/app.js"></script>
-
+    
+    <script src="~/app/components/products/products.modules.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productEditController.js"></script>
     <script src="~/app/components/products/productListController.js"></script>
 
-
+    <script src="~/app/components/product_categories/productCategories.modules.js"></script>
     <script src="~/app/components/product_categories/productCategoryListController.js"></script>
 
-    <script src="~/app/components/home/homeController.js"></script>
 
 </body>
 </html>
