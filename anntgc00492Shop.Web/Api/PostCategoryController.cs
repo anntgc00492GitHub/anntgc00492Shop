@@ -40,7 +40,7 @@ namespace anntgc00492Shop.Web.Api
                 return response;
             });
         }
-        
+
         [Route("add")]
         public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryViewModel)
         {
@@ -53,7 +53,7 @@ namespace anntgc00492Shop.Web.Api
                 }
                 else
                 {
-                    PostCategory newPostCategory=new PostCategory();
+                    PostCategory newPostCategory = new PostCategory();
                     newPostCategory.UpdatePostCategory(postCategoryViewModel);
                     var category = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Save();
@@ -63,6 +63,7 @@ namespace anntgc00492Shop.Web.Api
                 return response;
             });
         }
+
 
         [Route("update")]
         public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryViewModel)

@@ -26,53 +26,59 @@
                 </button>
             </div>
         </div>
-        <div class="box-body">
+        <div class="box-body">    
             <div class="row">
+                <!-- search box -->  
                 <div class="col-md-6">
                     <div class="input-group">
-                        <input type="text" class="form-control" ng-model="keyword" placeholder="Tìm kiếm" />
+                        <input type="text" class="form-control" ng-model="keyword" placeholder="Tìm kiếm"/>
                         <span class="input-group-btn"><button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button></span>
                     </div>
                 </div>
+                <!-- add button -->  
+                <div class="col-md-6">
+                    <button class="btn btn-success" ui-sref="add_product_category" >Thêm mới</button>
+                </div>
             </div>
-            <br/>
+            <br />
+            <!-- table list -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-body no-padding">
                             <table class="table table-condensed">
                                 <tbody>
-                                    <tr>
-                                        <th style="width: 5px">Id</th>
-                                        <th style="width: 55px">Tên danh mục</th>
-                                        <th style="width: 20px">Ngày tạo</th>
-                                        <th style="width: 10px">Trạng thái</th>
-                                        <th style="width: 10px">Thao Tac</th>
-                                    </tr>
-                                    <tr ng-repeat="item in productCategories">
-                                        <td>{{item.Id}}</td>
+                                <tr>
+                                    <th style="width: 5px">Id</th>
+                                    <th style="width: 55px">Tên danh mục</th>
+                                    <th style="width: 20px">Ngày tạo</th>
+                                    <th style="width: 10px">Trạng thái</th>
+                                    <th style="width: 10px">Thao Tac</th>
+                                </tr>
+                                <tr ng-repeat="item in productCategories">
+                                    <td>{{item.Id}}</td>
 
-                                        <td>
-                                            {{item.Name}}
-                                        </td>
-                                        <td>
-                                            {{item.CreatedDate | date:'dd/mm/yyyy'}}
-                                        </td>
-                                        <td>
-                                            <span ng-class="{'badge bg-green':item.Status==true,'badge bg-red':item.Status==false}">
+                                    <td>
+                                        {{item.Name}}
+                                    </td>
+                                    <td>
+                                        {{item.CreatedDate | date:'dd/mm/yyyy'}}
+                                    </td>
+                                    <td>
+                                        <span ng-class="{'badge bg-green':item.Status==true,'badge bg-red':item.Status==false}">
                                                 {{item.Status | statusFilter}}
                                             </span>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary "><i class="fa fa-pencil">Sửa</i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash">Xóa</i></button>
-                                        </td>
-                                    </tr>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5"><span class="pull-right">Trang:{{page+1}}-Tổng số bản ghi:{{totalCount}}</span></td>
-                                        </tr>
-                                    </tfoot>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary "><i class="fa fa-pencil">Sửa</i></button>
+                                        <button class="btn btn-sm btn-danger"><i class="fa fa-trash">Xóa</i></button>
+                                    </td>
+                                </tr>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="5"><span class="pull-right">Trang:{{page+1}}-Tổng số bản ghi:{{totalCount}}</span></td>
+                                </tr>
+                                </tfoot>
 
                                 </tbody>
                             </table>
@@ -80,7 +86,7 @@
                         <!-- /.box-body -->
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
