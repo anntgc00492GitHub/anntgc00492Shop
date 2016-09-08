@@ -247,6 +247,8 @@
     <Content Include="app\components\products\productListView.html" />
     <Content Include="app\components\product_categories\productCategoryAddView.html" />
     <Content Include="app\components\product_categories\productCategoryAddController.js" />
+    <Content Include="app\components\product_categories\productCategoryEditController.js" />
+    <Content Include="app\components\product_categories\productCategoryEditView.html" />
     <Content Include="app\components\product_categories\productCategoryListView.html" />
     <Content Include="app\components\product_categories\productCategoryListController.js" />
     <Content Include="app\shared\directives\pagerDirective.html" />
@@ -4324,6 +4326,9 @@
     <Content Include="ConnectionStrings.config" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -4637,6 +4642,7 @@
     <Content Include="app\components\product_categories\productCategories.modules.js" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Scripts\angular.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\anntgc00492Shop.Common\anntgc00492Shop.Common.csproj">
