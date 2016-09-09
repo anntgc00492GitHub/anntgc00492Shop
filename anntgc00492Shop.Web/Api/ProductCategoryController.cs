@@ -145,6 +145,8 @@ namespace anntgc00492Shop.Web.Api
             });
         }
 
+
+        //Phương thức xoa này nó không cho chạy thử vì secure
         [Route("delete")]
         [HttpDelete]
         [AllowAnonymous]
