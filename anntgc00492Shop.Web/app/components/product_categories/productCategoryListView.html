@@ -62,7 +62,7 @@
                                         {{item.Name}}
                                     </td>
                                     <td>
-                                        {{item.CreatedDate | date:'dd/mm/yyyy'}}
+                                        {{item.CreatedDate | date:'dd/MM/yyyy'}}
                                     </td>
                                     <td>
                                         <span ng-class="{'badge bg-green':item.Status==true,'badge bg-red':item.Status==false}">
@@ -70,8 +70,8 @@
                                             </span>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary "><i class="fa fa-pencil">Sửa</i></button>
-                                        <button class="btn btn-sm btn-danger"><i class="fa fa-trash">Xóa</i></button>
+                                        <button class="btn btn-sm btn-primary " ui-sref="edit_product_category({id:item.Id})"><i class="fa fa-pencil">Sửa</i></button>
+                                        <button class="btn btn-sm btn-danger" ui-sref="deleteProductCategory(item.Id)"><i class="fa fa-trash">Xóa</i></button>
                                     </td>
                                 </tr>
                                 <tfoot>

@@ -28,36 +28,10 @@ namespace anntgc00492Shop.Web.Api
         }
 
 
-        [Route("getallparents")]
-        [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                var m = _productCategoryService.GetAll();
-                var responseData = Mapper.Map<IEnumerable<ProductCategory>,IEnumerable<ProductCategoryViewModel>>(m);
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-                return response;
-            });
-        }
-
-
-        [Route("getbyid{id:int}")]
-        [HttpGet]
-        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                var model = _productCategoryService.GetById(id);
-                var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(model);
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-                return response;
-            });
-        }
-
-
+        //DUng cai nay test api phai xem keyword, page, voi page size
         [Route("getall")]
-        public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword, int page, int pageSize = 20)
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -80,6 +54,36 @@ namespace anntgc00492Shop.Web.Api
                 return response;
             });
         }
+
+
+        [Route("getallparents")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var m = _productCategoryService.GetAll();
+                var responseData = Mapper.Map<IEnumerable<ProductCategory>,IEnumerable<ProductCategoryViewModel>>(m);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
+
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productCategoryService.GetById(id);
+                var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response; 
+            });
+        }
+
+
 
         [Route("create")]
         [HttpPost]
@@ -109,6 +113,8 @@ namespace anntgc00492Shop.Web.Api
             });
         }
 
+
+        //Nhieu luc khong an phai chay lai
         [Route("update")]
         [HttpPut]
         [AllowAnonymous]

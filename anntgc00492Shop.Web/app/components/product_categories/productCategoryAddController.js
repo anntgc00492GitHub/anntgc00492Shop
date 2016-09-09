@@ -6,7 +6,6 @@
         $scope.productCategory = {
             CreatedDate: new Date(),
             Status: true,
-            Name: "Ten"
         }
 
 

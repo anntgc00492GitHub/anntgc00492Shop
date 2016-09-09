@@ -25,7 +25,7 @@
                     pageSize: 2
                 }
             }
-            apiService.get('/api/productcategory/getall', config, function (result) {
+            apiService.get('api/productcategory/getall', config, function (result) {
                 if (result.data.TotalCount == 0) {
                     notificationService.displayWarning("Không tìm thấy bản nào");
                 }
