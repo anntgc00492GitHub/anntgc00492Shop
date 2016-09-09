@@ -5,7 +5,8 @@
         return {
             get: get,
             post: post,
-            put:put
+            put: put,
+            del:del
         }
         function get(url, params, success, failure) {
             $http.get(url, params)
@@ -20,7 +21,7 @@
             $http.post(url, data).then(function (result) {
                 success(result);
             }, function (error) {
-                if (error.status == 401) {
+                if (error.status === 401) {
                     notificationService.displayError("authentication is required");
                 }
                 failure(error);
@@ -40,5 +41,16 @@
                 }
            );
         }
+        function del(url, data, success, failure) {
+            $http.delete(url, data).then(function (result) {
+                success(result);
+            }, function (error) {
+                if (error.status === 401) {
+                    notificationService.displayError("authentication is required");
+                }
+                failure(error);
+            });
+        }
+        //Thêm cái này nhớ phải khai báo hàm ở trên không quên nó lại bảo không phải function
     }
 })(angular.module("anntgc00492Shop.common"));
