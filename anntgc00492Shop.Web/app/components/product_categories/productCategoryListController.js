@@ -7,17 +7,9 @@
         $scope.productCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.getProductCategories = getProductCategories;
         $scope.keyword = '';
 
-        $scope.search = search;
-
-        function search() {
-            getProductCategories();
-        }
-
-        $scope.getProductCategories();
-
+        $scope.getProductCategories = getProductCategories;
         function getProductCategories(page) {
             page = page || 0;
             var config = {
@@ -45,9 +37,14 @@
                     console.log('Load productcategory failed.');
                 });
         }
+        $scope.getProductCategories();    
+
+        $scope.search = search;
+        function search() {
+            getProductCategories();
+        }
 
         $scope.deleteProductCategory = deleteProductCategory;
-
         function deleteProductCategory(id) {
             $ngBootbox.confirm("Bạn có muốn xóa không ?")
                 .then(
@@ -77,17 +74,15 @@
 
         //Phần dưới triển khai xóa nhiều
 
-        $scope.deleteMultiple = deleteMultiple; //Khai báo hàm xóa nhiều
+        $scope.deleteMultiple = deleteMultiple;//Khai báo hàm xóa nhiều
         function deleteMultiple() {
             var listId = [];
             $.each(
-                    $scope.selected,//cho danh sách các cái đc tích lấy ở scope watch
+                    $scope.selected, //cho danh sách các cái đc tích lấy ở scope watch
                     function (i, item) {
-                        listId.push(item.Id);//đẩy id trong từng item vào trong $scope.selected
-                        // chú ý Id trong item.Id phải là Id giống trong db không phải ID.
+                        listId.push(item.Id); //đẩy id trong từng item vào trong $scope.selected                                                                  // chú ý Id trong item.Id phải là Id giống trong db không phải ID.
                     }
                 );
-
             //Tạo params nạp 
             var config = {
                 params: {
@@ -114,13 +109,15 @@
         $scope.selectAll = selectAll;//Khai báo hàm xóa selectAll
         function selectAll() {
             if ($scope.isAll === false) {
-                angular.forEach($scope.productCategories,
+                angular.forEach(
+                    $scope.productCategories,
                     function (item) {
-                        item.checked = true;
+                        item.checked = true;//Biến tất thuộc tính checked của các item sang giá trị true
                     });
                 $scope.isAll = true;
             } else {
-                angular.forEach($scope.productCategories,
+                angular.forEach(
+                    $scope.productCategories,
                     function (item) {
                         item.checked = false;
                     });
@@ -141,6 +138,7 @@
                     $('#btnDelete').attr('disabled', 'disabled');
                 }
             },
-            true);
+            true
+            );
     }
 })(angular.module('anntgc00492Shop.product_categories'));

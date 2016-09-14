@@ -9,13 +9,15 @@ using Anntgc00492Shop.Data.Infrastructure;
 
 namespace anntgc00492Shop.Data.Repositories
 {
-    public interface IProductRepository
+    public interface IProductRepository:IRepository<Product>
     {
-        
+
     }
+
     public class ProductRepository:RepositoryBase<Product>,IProductRepository
     {
-        public ProductRepository(IDbFactory dbFactory) : base(dbFactory)
+        public ProductRepository(IDbFactory dbFactory) 
+            : base(dbFactory)
         {
             
         }

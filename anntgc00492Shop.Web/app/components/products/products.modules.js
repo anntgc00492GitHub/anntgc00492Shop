@@ -10,6 +10,13 @@
             url: "/product_add",
             templateUrl: "/app/components/products/productAddView.html",
             controller: "productAddController"
-        });
+        }).state(
+        'product_edit',
+        {
+            url: "/product_edit",
+            templateUrl: "/app/components/products/productListView.html",
+            controller:"productEditController"
+        }
+        );
     }
 })();
