@@ -66,6 +66,10 @@
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CKFinder.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -3049,6 +3053,47 @@
     <Content Include="Assets\Admin\libs\ckfinder\ckfinder_v1.js" />
     <Content Include="Assets\Admin\libs\ckfinder\config.asp" />
     <Content Include="Assets\Admin\libs\ckfinder\config.js" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\connector.aspx" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\bg.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\ca.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\cs.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\cy.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\da.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\de.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\el.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\en.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\eo.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\es-mx.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\es.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\et.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\fa.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\fi.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\fr.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\gu.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\he.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\hi.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\hr.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\hu.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\it.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\ja.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\lt.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\lv.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\nb.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\nl.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\nn.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\no.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\pl.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\pt-br.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\ro.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\ru.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\sk.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\sl.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\sr.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\sv.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\tr.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\vi.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\zh-cn.xml" />
+    <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\zh-tw.xml" />
     <Content Include="Assets\Admin\libs\ckfinder\help\cs\files\001.html" />
     <Content Include="Assets\Admin\libs\ckfinder\help\cs\files\002.html" />
     <Content Include="Assets\Admin\libs\ckfinder\help\cs\files\003.html" />
@@ -4922,6 +4967,7 @@
     <Content Include="ConnectionStrings.config" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="Libs\CKFinder.dll" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -4948,6 +4994,7 @@
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\Admin\libs\checklist-model\test\" />
     <Folder Include="Assets\client\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
