@@ -3047,11 +3047,10 @@
     <Content Include="Assets\Admin\libs\ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="Assets\Admin\libs\ckeditor\styles.js" />
     <Content Include="Assets\Admin\libs\ckfinder\changelog.txt" />
-    <Content Include="Assets\Admin\libs\ckfinder\ckfinder.asp" />
     <Content Include="Assets\Admin\libs\ckfinder\ckfinder.html" />
     <Content Include="Assets\Admin\libs\ckfinder\ckfinder.js" />
     <Content Include="Assets\Admin\libs\ckfinder\ckfinder_v1.js" />
-    <Content Include="Assets\Admin\libs\ckfinder\config.asp" />
+    <Content Include="Assets\Admin\libs\ckfinder\config.ascx" />
     <Content Include="Assets\Admin\libs\ckfinder\config.js" />
     <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\connector.aspx" />
     <Content Include="Assets\Admin\libs\ckfinder\core\connector\aspx\lang\bg.xml" />
@@ -3430,7 +3429,6 @@
     <Content Include="Assets\Admin\libs\ckfinder\plugins\fileeditor\codemirror\mode\sql\sql.js" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\fileeditor\codemirror\mode\stex\stex.js" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\fileeditor\codemirror\mode\xml\xml.js" />
-    <Content Include="Assets\Admin\libs\ckfinder\plugins\fileeditor\plugin.asp" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\fileeditor\plugin.js" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\gallery\colorbox\colorbox.css" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\gallery\colorbox\images\border.png" />
@@ -3450,10 +3448,8 @@
     <Content Include="Assets\Admin\libs\ckfinder\plugins\gallery\colorbox\jquery.min.js" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\gallery\colorbox\license.txt" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\imageresize\images\mini.gif" />
-    <Content Include="Assets\Admin\libs\ckfinder\plugins\imageresize\plugin.asp" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\imageresize\plugin.js" />
     <Content Include="Assets\Admin\libs\ckfinder\plugins\watermark\logo.gif" />
-    <Content Include="Assets\Admin\libs\ckfinder\plugins\watermark\plugin.asp" />
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\app.css" />
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\host.css" />
@@ -4992,6 +4988,7 @@
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
+    <Folder Include="Assets\Admin\libs\bower-angular-sanitize-master\" />
     <Folder Include="Assets\Admin\libs\checklist-model\test\" />
     <Folder Include="Assets\client\" />
     <Folder Include="UploadedFiles\" />
@@ -5288,7 +5285,6 @@
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Assets\Admin\libs\ckfinder\web.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Scripts\angular.min.js.map" />

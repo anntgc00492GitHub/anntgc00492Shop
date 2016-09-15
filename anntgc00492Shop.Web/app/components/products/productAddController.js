@@ -1,13 +1,15 @@
 ﻿(function (app) {
     app.controller('productAddController', productAddController);
     productAddController.$inject = ['$scope', 'commonService', 'apiService', 'notificationService','$state'];//Sai dau $ nen khong itm ra
-    function productAddController($scope, commonService, apiService, notificationService,$state) {
+
+    function productAddController($scope, commonService, apiService, notificationService, $state) {
         $scope.product = {
             CreatedDate: new Date(),
             Status: true
         }
 
         $scope.getSeoTitle = getSeoTitle;
+
         function getSeoTitle() {
             $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
@@ -15,6 +17,16 @@
         $scope.ckeditorOptions = {
             language: 'vi',
             height: "200px"
+        }
+
+
+        $scope.chooseImage = chooseImage;
+        function chooseImage () {
+            var finder = new CKFinder();
+            finder.selectActionFunction=function(fileUrl) {
+                $scope.product.Image=fileUrl;
+            }
+            finder.popup();
         }
 
         $scope.addProduct = addProduct;
