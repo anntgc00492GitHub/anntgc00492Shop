@@ -1,6 +1,6 @@
 ﻿(function (app) {
     app.controller('productAddController', productAddController);
-    productAddController.$inject = ['$scope', 'commonService', 'apiService', 'notificationService','$state'];//Sai dau $ nen khong itm ra
+    productAddController.$inject = ['$scope', 'commonService', 'apiService', 'notificationService', '$state'];//Sai dau $ nen khong itm ra
 
     function productAddController($scope, commonService, apiService, notificationService, $state) {
         $scope.product = {
@@ -20,17 +20,35 @@
         }
 
 
-        $scope.chooseImage = chooseImage;
-        function chooseImage () {
+        $scope.chooseImage = function() {
             var finder = new CKFinder();
-            finder.selectActionFunction=function(fileUrl) {
-                $scope.product.Image=fileUrl;
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(
+                    function () {
+                        $scope.product.Image=fileUrl;
+                    }
+                );
+            }
+            finder.popup();
+        }
+
+
+        $scope.moreImages = [];
+        $scope.chooseMoreImages = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(
+                    function () {
+                        $scope.moreImages.push(fileUrl);
+                    }
+                );
             }
             finder.popup();
         }
 
         $scope.addProduct = addProduct;
         function addProduct() {
+            $scope.product.MoreImages = JSON.stringify($scope.moreImages);
             apiService.post(//Chỗ này nhơ là post, không chạy thử đc mà phải qua service. post sản phẩm phải post category id
                 'api/product/create',
                 $scope.product,
@@ -44,15 +62,14 @@
             );
         }
 
-        function loadProductCategory()
-        {
+        function loadProductCategory() {
             apiService.get(
                     'api/productCategory/getallparents',
                     null,
-                    function(result) {
+                    function (result) {
                         $scope.productCategories = result.data;
                     },
-                    function() {
+                    function () {
                         console.log("can not get list category");
                     }
                 );
