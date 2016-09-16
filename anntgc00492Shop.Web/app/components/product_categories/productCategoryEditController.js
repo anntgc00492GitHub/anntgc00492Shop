@@ -1,8 +1,8 @@
 ﻿(function (app) {
     app.controller('productCategoryEditController', productCategoryEditController);
-    productCategoryEditController.$inject = ['$scope', '$state', '$stateParams','apiService', 'notificationService','commonService'];
+    productCategoryEditController.$inject = ['$scope', '$state', '$stateParams', 'apiService', 'notificationService', 'commonService'];
 
-    function productCategoryEditController($scope, $state, $stateParams, apiService, notificationService,commonService) {
+    function productCategoryEditController($scope, $state, $stateParams, apiService, notificationService, commonService) {
 
         $scope.productCategory = {
             CreatedDate: new Date(),
@@ -27,10 +27,10 @@
             apiService.get(
                 'api/productCategory/getallparents',
                 null,
-                function(result) {
+                function (result) {
                     $scope.parentCategories = result.data;
                 },
-                function(error) {
+                function (error) {
                     console.log('can not get list parent');
                 }
             );
@@ -44,15 +44,18 @@
         $scope.getSeoTitle = getSeoTitle;
 
         function updateProductCategory() {
-            apiService.put('api/productcategory/update', $scope.productCategory,
+            apiService.put(
+                'api/productcategory/update',
+                $scope.productCategory,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được cập nhật.');
                     $state.go('product_categories');
-                }, function (error) {
+                },
+                function (error) {
                     notificationService.displayError('Cập nhật không thành công.');
-                });
+                }
+            );
         }
         $scope.updateProductCategory = updateProductCategory;
     }
-
 })(angular.module('anntgc00492Shop.product_categories'));

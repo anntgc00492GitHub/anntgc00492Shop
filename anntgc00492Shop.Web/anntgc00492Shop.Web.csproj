@@ -4964,9 +4964,6 @@
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
     <Content Include="Libs\CKFinder.dll" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -5287,7 +5284,6 @@
     <Content Include="Assets\Admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Scripts\angular.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\anntgc00492Shop.Common\anntgc00492Shop.Common.csproj">

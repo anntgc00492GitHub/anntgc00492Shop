@@ -104,6 +104,9 @@ namespace anntgc00492Shop.Web.Api
                     selectedProduct.UpdatedDate = DateTime.Now;
                     _productService.Update(selectedProduct);
                     _productService.Save();
+                    //Xử lý báo kết quả về
+                    var responseData = Mapper.Map<Product, ProductViewModel>(selectedProduct);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });
