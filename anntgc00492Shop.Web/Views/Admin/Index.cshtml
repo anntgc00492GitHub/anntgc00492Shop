@@ -33,10 +33,11 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini" ng-app="anntgc00492Shop">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="anntgc00492Shop" ng-controller="rootController">
 
     <!-- Site wrapper -->
-    <div ui-view></div>
+<div ui-view></div>
+
     <!-- ./wrapper -->
     <!-- jQuery 2.1.4 -->
     <script src="~/Assets/admin/libs/jquery/dist/jquery.js"></script>
@@ -46,12 +47,14 @@
     <script src="~/Assets/admin/libs/slimScroll/jquery.slimscroll.js"></script>
     <!-- FastClick -->
     <script src="~/Assets/admin/libs/fastclick/lib/fastclick.js"></script>
-    <!-- AdminLTE App -->
-    @*<script src="../../dist/js/app.min.js"></script>*@
-    <script src="~/Assets/Admin/js/app.min.js"></script>
+
     <!-- AdminLTE for demo purposes -->
     @*<script src="../../dist/js/demo.js"></script>*@
-    <script src="~/Assets/Admin/js/demo.js"></script>
+    <script src="~/Assets/Admin/js/demo.js"></script>    
+    <!-- AdminLTE App -->
+    @*<script src="../../dist/js/app.min.js"></script>*@
+    @*<script src="~/Assets/Admin/js/app.min.js"></script>*@
+
     <!--being embed angular js-->
     <script src="~/Assets/Admin/libs/angular/angular.js"></script>
     <script src="~/Assets/Admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
@@ -65,7 +68,7 @@
 
     <script src="~/Assets/Admin/libs/bower-angular-sanitize-master/angular-sanitize.js"></script>
 
-    <script src="~/app/app.js"></script>
+
     <script src="~/app/shared/modules/anntgc00492Shop.common.js"></script>
 
     <script src="~/app/shared/services/notificationService.js"></script>
@@ -75,10 +78,15 @@
     <script src="~/app/shared/services/commonService.js"></script>
 
 
-
+    <script src="~/app/app.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
+    
+    
 
     <script src="~/app/shared/services/apiService.js"></script>
+    
+    <script src="~/app/components/home/rootController.js"></script>    
+    <script src="~/app/components/login/loginController.js"></script>
 
     <script src="~/app/components/products/products.modules.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
@@ -89,6 +97,8 @@
     <script src="~/app/components/product_categories/productCategoryListController.js"></script>
     <script src="~/app/components/product_categories/productCategoryAddController.js"></script>
     <script src="~/app/components/product_categories/productCategoryEditController.js"></script>
+    
+
 
 </body>
 </html>

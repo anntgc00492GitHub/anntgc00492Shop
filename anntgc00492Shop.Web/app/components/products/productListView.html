@@ -48,8 +48,8 @@
                             <td><input name="all" type="checkbox" ng-click="selectAll()" /></td>
                             <th style="width: 5%">Id</th>
                             <th style="width: 20%">Tên sản phẩm</th>
-                            <th style="width: 20%">Hinh Anh</th>
-                            <th style="width: 20%">Mô tả sản phẩm</th>
+                            <th style="width: 40%">Hinh Anh</th>
+                            <!--<th style="width: 20%">Mô tả sản phẩm</th>-->
                             <th style="width: 15%">Ngày tạo</th>
                             <th style="width: 5%">Trạng thái</th>
                             <th style="width: 15%">Thao tác</th>
@@ -59,15 +59,14 @@
                             <td>{{item.Id}}</td>
                             <td>{{item.Name}}</td>
                             <td>
-                                <img class="img-responsive" src="{{item.Image}}" alt="image" />
+                                <img class="img-responsive" src="{{item.Image}}" alt="image" width="200px"/>
                             </td>
-                            <td>
+                            <!--<td>
                                 <ng-bind-html ng-bind-html="item.Content"></ng-bind-html>
-                            </td>
+                            </td>-->
                             <td>
                                 {{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}
                             </td>
-                            <!--class="badge bg-red"-->
                             <td>
                                 <span ng-class="{'badge bg-red':item.Status==false,'badge bg-green':item.Status==true}">
                                     {{item.Status | statusFilter}}
