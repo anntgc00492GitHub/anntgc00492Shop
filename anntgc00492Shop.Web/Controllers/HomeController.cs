@@ -26,5 +26,22 @@ namespace anntgc00492Shop.Web.Controllers
 
             return View();
         }
+
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            return PartialView("Footer");
+        }
+
+        [ChildActionOnly]
+        public ActionResult Header()
+        {
+            return PartialView("Header");
+        }
+
+        public ActionResult Category()
+        {
+            return PartialView("Category");
+        }
     }
 }

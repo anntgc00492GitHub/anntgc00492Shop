@@ -5355,6 +5355,9 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\MyLayout.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\anntgc00492Shop.Common\anntgc00492Shop.Common.csproj">
