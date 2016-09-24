@@ -17,11 +17,10 @@
 <body>
     <!--header-->
     @{Html.RenderAction("Header","Home");}
-    <!--Container-->
-    <div class="container">
-    @RenderBody()
-    </div>
-
-    <!--Footer--->
-    @{Html.RenderAction("Footer","Home");}
+<!--Container-->
+<div class="container">
+    @RenderBody()   
+</div>
+        <!--Footer--->
+        @{Html.RenderAction("Footer", "Home");}
 </html>

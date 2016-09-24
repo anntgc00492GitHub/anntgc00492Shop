@@ -17,7 +17,6 @@ using AutoMapper;
 namespace anntgc00492Shop.Web.Api
 {
     [RoutePrefix("api/productCategory")]
-    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         private IProductCategoryService _productCategoryService;

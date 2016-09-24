@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using anntgc00492Shop.Common;
 using anntgc00492Shop.Model.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -21,6 +22,7 @@ namespace anntgc00492Shop.Data.Migrations
         {
             //CreateUser(context);
             CreateProductCategorySample(context);
+            CreateFooter(context);
         }
 
         private void CreateUser(Anntgc00492ShopDbContext context)
@@ -68,5 +70,55 @@ namespace anntgc00492Shop.Data.Migrations
             }
 
         }
+
+        private void CreateFooter(Anntgc00492ShopDbContext context)
+        {
+            if (context.Footers.Count(x => x.Id == CommonConstants.DefaultFooterId) == 0)
+            {
+                Footer defaultFooter = new Footer()
+                {
+                    Id = CommonConstants.DefaultFooterId,
+                    Content = @"<div class='footer-bottom'>
+                                    <div class='container'>
+                                        <div class='footer-bottom-cate'>
+                                            <h6>CATEGORIES</h6>
+                                            <ul>
+                                                <li><a href = '#' > Curabitur sapien</a></li>
+                                                <li><a href = '#' > Dignissim purus</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class='footer-bottom-cate bottom-grid-cat'>
+                                            <h6>FEATURE PROJECTS</h6>
+                                            <ul>
+                                                <li><a href = '#' > Curabitur sapien</a></li>
+                                                <li><a href = '#' > Dignissim purus</a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class='footer-bottom-cate'>
+                                            <h6>TOP BRANDS</h6>
+                                            <ul>
+                                                <li><a href = '#' > Curabitur sapien</a></li>
+                                                <li><a href = '#' > Dignissim purus</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class='footer-bottom-cate cate-bottom'>
+                                            <h6>OUR ADDERSS</h6>
+                                            <ul>
+                                                <li>gravida at.</li>
+                                                <li class='phone'>PH : 6985792466</li>
+                                                <li class='temp'> <p class='footer-class'>Design by<a href= 'anntgc00492@fpt.edu.vn' target= '_blank' > W3layouts </ a > </ p ></ li >
+                                            </ ul >
+                                        </ div >
+                                        < div class='clearfix'> </div>
+                                    </div>
+                                </div>"
+                };
+                context.Footers.Add(defaultFooter);
+                context.SaveChanges();
+            }
+        }
     }
 }
+
+
