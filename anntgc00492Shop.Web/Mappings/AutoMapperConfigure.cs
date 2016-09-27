@@ -23,6 +23,7 @@ namespace anntgc00492Shop.Web.Mappings
             Mapper.CreateMap<ProductTag, ProductTagViewModel>();
 
             Mapper.CreateMap<Footer, FooterViewModel>();
+            Mapper.CreateMap<Slide, SlideViewModel>();
         }
     }
 }

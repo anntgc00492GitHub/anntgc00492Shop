@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Remoting.Contexts;
 using anntgc00492Shop.Common;
 using anntgc00492Shop.Model.Models;
 using Microsoft.AspNet.Identity;
@@ -23,6 +24,7 @@ namespace anntgc00492Shop.Data.Migrations
             //CreateUser(context);
             CreateProductCategorySample(context);
             CreateFooter(context);
+            CreateSlides(context);
         }
 
         private void CreateUser(Anntgc00492ShopDbContext context)
@@ -71,6 +73,8 @@ namespace anntgc00492Shop.Data.Migrations
 
         }
 
+
+
         private void CreateFooter(Anntgc00492ShopDbContext context)
         {
             if (context.Footers.Count(x => x.Id == CommonConstants.DefaultFooterId) == 0)
@@ -118,6 +122,54 @@ namespace anntgc00492Shop.Data.Migrations
                 context.SaveChanges();
             }
         }
+
+        private void CreateSlides(Anntgc00492ShopDbContext context)
+        {
+            if (context.Slides.Count() == 0)
+            {
+                List<Slide> slideList = new List<Slide>()
+                {
+                    new Slide()
+                    {
+                        Name = "Slide 1",
+                        Image = "/Assets/client/images/baa.jpg",
+                        Description = @"<h2>FLAT 50% 0FF</h2>
+							            <label>FOR ALL PURCHASE <b>VALUE</b></label>
+							            <p>Day la phan mo ta</p>					
+							            <span class='on-get'>GET NOW</span>",
+                        DisplayOrder = 1,
+                        Status = true
+                    },
+                    new Slide()
+                    {
+                        Name = "Slide 2",
+                        Image = "/Assets/client/images/bag.jpg",
+                        Description = @"<h2>FLAT 60% 0FF</h2>
+							            <label>FOR ALL PURCHASE <b>VALUE</b></label>
+							            <p>Day la phan mo ta</p>					
+							            <span class='on-get'>GET NOW</span>",
+                        DisplayOrder = 2,
+                        Status = true
+                    },
+                    new Slide()
+                    {
+                        Name = "Slide 2",
+                        Image = "/Assets/client/images/bag1.jpg",
+                        Description = @"<h2>FLAT 60% 0FF</h2>
+							            <label>FOR ALL PURCHASE <b>VALUE</b></label>
+							            <p>Day la phan mo ta</p>					
+							            <span class='on-get'>GET NOW</span>",
+                        DisplayOrder = 3,
+                        Status = true
+                    }
+                };
+                context.Slides.AddRange(slideList);
+                context.SaveChanges();
+            }
+
+        }
+
+        //
     }
 }
 

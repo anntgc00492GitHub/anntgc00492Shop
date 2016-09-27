@@ -219,8 +219,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -229,6 +231,7 @@
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfigure.cs" />
     <Compile Include="Models\FooterViewModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\OrderDetailViewModel.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
@@ -4966,6 +4969,7 @@
     <Content Include="Assets\client\css\bootstrap.css" />
     <Content Include="Assets\client\css\etalage.css" />
     <Content Include="Assets\client\css\form.css" />
+    <Content Include="Assets\client\css\myStyle.css" />
     <Content Include="Assets\client\css\style.css" />
     <Content Include="Assets\client\images\a-star.png" />
     <Content Include="Assets\client\images\arrow1.png" />
@@ -5034,6 +5038,11 @@
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
     <Content Include="Libs\CKFinder.dll" />
+    <Content Include="UploadedFiles\files\s1.jpg" />
+    <Content Include="UploadedFiles\files\s2.jpg" />
+    <Content Include="UploadedFiles\files\s3.jpg" />
+    <Content Include="UploadedFiles\files\sh.jpg" />
+    <Content Include="UploadedFiles\files\wa.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -5045,7 +5054,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -5057,7 +5065,6 @@
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\Admin\libs\bower-angular-sanitize-master\" />
     <Folder Include="Assets\Admin\libs\checklist-model\test\" />
-    <Folder Include="UploadedFiles\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
@@ -5359,6 +5366,9 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Category.cshtml" />
+    <Content Include="Views\Product\ProductsInACategory.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\anntgc00492Shop.Common\anntgc00492Shop.Common.csproj">

@@ -13,15 +13,18 @@ namespace anntgc00492Shop.Service
     public interface ICommonService
     {
         Footer GetFooter();
+        IEnumerable<Slide> GetSlides();
     }
     public class CommonService:ICommonService
     {
         private IFooterRepository _footerRepository;
+        private ISlideRepository _slideRepository;
         private IUnitOfWork _unitOfWork;
 
-        public CommonService(IFooterRepository footerRepository, IUnitOfWork unitOfWork)
+        public CommonService(IUnitOfWork unitOfWork, IFooterRepository footerRepository, ISlideRepository slideRepository)
         {
             _footerRepository = footerRepository;
+            _slideRepository = slideRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -29,5 +32,10 @@ namespace anntgc00492Shop.Service
         {
             return _footerRepository.GetSingleByCondition(x => x.Id == CommonConstants.DefaultFooterId);
         }
+
+        public IEnumerable<Slide> GetSlides()
+        {
+            return _slideRepository.GetMulti(x => x.Status);
+        } 
     }
 }

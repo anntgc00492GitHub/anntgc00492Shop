@@ -18,6 +18,8 @@ namespace anntgc00492Shop.Service
         Product GetById(int id);
         IEnumerable<Product> GetAll();
         IEnumerable<Product> GetAll(string keyword);
+        IEnumerable<Product> GetLatest(int top);
+        IEnumerable<Product> GetTopSale(int top);
         void Save();
     }
 
@@ -119,6 +121,19 @@ namespace anntgc00492Shop.Service
             {
                 return _productRepository.GetAll();
             }
+        }
+
+        public IEnumerable<Product> GetLatest(int top)
+        {
+            return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public IEnumerable<Product> GetTopSale(int top)
+        {
+            return
+                _productRepository.GetMulti(x => x.Status && x.HotFlag == true)
+                    .OrderByDescending(x => x.CreatedDate)
+                    .Take(top);
         }
 
         public void Save()

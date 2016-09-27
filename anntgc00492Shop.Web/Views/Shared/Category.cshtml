@@ -5,16 +5,19 @@
         <ul class="menu">
             @foreach (var category in Model.Where(x => x.ParentId == null))
             {
-                var url = "/" + category.Alias + ".pc-" + category.Id + ".html";
+                var url = "/san-pham/trong-"+category.Alias+"/" + category.Id;
                 var childCategories = Model.Where(x => x.ParentId == category.Id);
-                <li>
-                    <a href="@url">@category.Name @(childCategories.Count() > 0 ? "<img class=\"arrow-img\" src=\"/Assets/client/images/arrow1.png\" alt=\"\" />" : "") </a>
-                    @if (childCategories.Count()>0)
+                <li>                    
+                    <a href="@url">
+                        @category.Name
+                        @(childCategories.Any() ? Html.Raw("<img src='/Assets/client/images/arrow1.png' alt='' style='float:right;margin:20px 20px 0 0'/>") : Html.Raw(""))@*khong dung class anh mui ten cua no nua*@
+                    </a>
+                    @if (childCategories.Any())
                     {
                         <ul class="cute">
                             @foreach (var childCategory in childCategories)
                             {
-                                var childUrl = "/" + childCategory.Alias + ".pc-" + childCategory.Id + ".html";
+                                var childUrl = "/san-pham/trong-"+childCategory.Alias +"/"+childCategory.Id;//đầu linh nhét vào thẻ a phải có dấu gạch, trong action route không cần có
                                 <li class="subitem3"><a href="@childUrl">@childCategory.Name</a></li>
                             }
                         </ul>
