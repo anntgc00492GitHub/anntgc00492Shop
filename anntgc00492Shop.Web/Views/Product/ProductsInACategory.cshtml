@@ -1,8 +1,93 @@
 ﻿
+@model PagedList.IPagedList<anntgc00492Shop.Web.Models.ProductViewModel>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "ProductsInACategory";
     Layout = "~/Views/Shared/MyLayout.cshtml";
 }
 
 <h2>ProductsInACategory</h2>
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("ProductsInACategory", "Product", FormMethod.Get))
+{
+    <p>
+        @*<input type="text" name="categoryId" value="@ViewBag.CurrentCategoryFilter" />*@
+        @*@Html.DropDownList("categoryId",(SelectList)ViewBag.CurrentCategoryFilter, String.Empty)*@
+        <select name="categoryId">
+            <option value=null>Chọn category</option>
+            @foreach (SelectListItem option in ViewBag.CurrentCategoryListWithSelectedItem)
+            {
+                <option value="@option.Value" @( option.Selected ? "selected='selected'" : "")> @option.Text</option>
+                if (option.Selected)
+                {
+                    ViewBag.CurrentlySelectedCategoryId = option.Value;
+                }
+            }
+        </select>
+        <input type="text" name="searchString" value="@ViewBag.CurrentSearchString" />
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@if (Model.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.ActionLink("Name", "ProductsInACategory",
+                    new
+                    {
+                        sortOrderParam = ViewBag.NameSortParm,
+                        currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
+                        currentSearchStringParam = ViewBag.CurrentSearchString
+                    })
+                </th>
+                <th>
+                    @Html.ActionLink("Price", "ProductsInACategory",
+                new
+                {
+                    sortOrderParam = ViewBag.PriceSortParm,
+                    currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
+                    currentSearchStringParam = ViewBag.CurrentSearchString
+                })
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <br />
+}
+else
+{
+    <div class="text-center">Không có bản ghi nào được tìm thấy.</div>
+}
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(
+    Model,
+    page => Url.Action("ProductsInACategory",
+    new
+    {
+        page,
+        sortOrderParam = ViewBag.CurrentSort,
+        currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
+        currentSearchStringParam = ViewBag.CurrentSearchString
+    }))
 

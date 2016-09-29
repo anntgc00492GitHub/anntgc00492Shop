@@ -21,6 +21,10 @@ namespace anntgc00492Shop.Service
         IEnumerable<Product> GetLatest(int top);
         IEnumerable<Product> GetTopSale(int top);
         void Save();
+
+        IEnumerable<Product> GetProductListByCategoryIdSearchSort(int? categoryid, string searchString,
+            string orderSort);
+
     }
 
     public class ProductService:IProductService
@@ -139,6 +143,36 @@ namespace anntgc00492Shop.Service
         public void Save()
         {
             _unitOfWork.Commit();
+        }
+
+
+        public IEnumerable<Product> GetProductListByCategoryIdSearchSort(int? categoryId, string searchString, string orderSort)
+        {
+            var productList = GetAll();
+            if (!string.IsNullOrEmpty(categoryId.ToString()))
+            {
+                productList = productList.Where(p => p.CategoryId == categoryId);
+            }
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productList = productList.Where(p => p.Name.Contains(searchString) || p.Alias.Contains(searchString));
+            }
+            switch (orderSort)
+            {
+                case "Name":
+                    productList = productList.OrderByDescending(p => p.Name);
+                    break;
+                case "Price":
+                    productList = productList.OrderByDescending(p => p.Price);
+                    break;
+                case "Popular":
+                    productList = productList.OrderByDescending(p => p.ViewCount);
+                    break;
+                default:
+                    productList = productList.OrderByDescending(p => p.CreatedDate);
+                    break;
+            }
+            return productList;
         }
     }
 }

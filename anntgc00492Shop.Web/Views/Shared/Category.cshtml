@@ -17,7 +17,7 @@
                         <ul class="cute">
                             @foreach (var childCategory in childCategories)
                             {
-                                var childUrl = "/san-pham/trong-"+childCategory.Alias +"/"+childCategory.Id;//đầu linh nhét vào thẻ a phải có dấu gạch, trong action route không cần có
+                                var childUrl = "/Product/ProductsInACategory?categoryId="+childCategory.Id;//đầu linh nhét vào thẻ a phải có dấu gạch, trong action route không cần có
                                 <li class="subitem3"><a href="@childUrl">@childCategory.Name</a></li>
                             }
                         </ul>

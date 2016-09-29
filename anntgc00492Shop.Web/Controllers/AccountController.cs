@@ -13,15 +13,5 @@ namespace anntgc00492Shop.Web.Controllers
         {
             return View();
         }
-
-        public ActionResult Login()
-        {
-            
-        }
-
-        public ActionResult Register()
-        {
-            
-        }
     }
 }
