@@ -5,89 +5,96 @@
     ViewBag.Title = "ProductsInACategory";
     Layout = "~/Views/Shared/MyLayout.cshtml";
 }
+@{Html.RenderAction("Category", "Home");}
 
-<h2>ProductsInACategory</h2>
-
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@using (Html.BeginForm("ProductsInACategory", "Product", FormMethod.Get))
-{
-    <p>
-        @*<input type="text" name="categoryId" value="@ViewBag.CurrentCategoryFilter" />*@
-        @*@Html.DropDownList("categoryId",(SelectList)ViewBag.CurrentCategoryFilter, String.Empty)*@
-        <select name="categoryId">
-            <option value=null>Chọn category</option>
-            @foreach (SelectListItem option in ViewBag.CurrentCategoryListWithSelectedItem)
+<div class="women-product">
+    <div class=" w_content">
+        <div class="women">
+            @using (Html.BeginForm("ProductsInACategory", "Product", FormMethod.Get))
             {
-                <option value="@option.Value" @( option.Selected ? "selected='selected'" : "")> @option.Text</option>
-                if (option.Selected)
-                {
-                    ViewBag.CurrentlySelectedCategoryId = option.Value;
-                }
+                <p>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label>Products @Model.Count in </label>
+                            <select name="categoryId" class="form-control">
+                                <option value=null>Chọn category</option>
+                                @foreach (SelectListItem option in ViewBag.CurrentCategoryListWithSelectedItem)
+                                {
+                                    <option value="@option.Value" @(option.Selected ? "selected='selected'" : "")> @option.Text</option>
+                                    if (option.Selected)
+                                    {
+                                        ViewBag.CurrentlySelectedCategoryId = option.Value;
+                                    }
+                                }
+                            </select>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="searchString" value="@ViewBag.CurrentSearchString"/>
+                            </div>
+                            <input type="submit" class="btn btn-default" value="Search"/>
+                        </div>
+                    </div>
+                </p>
             }
-        </select>
-        <input type="text" name="searchString" value="@ViewBag.CurrentSearchString" />
-        <input type="submit" value="Search" />
-    </p>
-}
 
-@if (Model.Count > 0)
-{
-    <div class="table-responsive">
-        <table class="table">
-            <tr>
-                <th>
+            <ul class="w_nav">
+                <li>Sort : </li>
+                <li>
                     @Html.ActionLink("Name", "ProductsInACategory",
-                    new
-                    {
-                        sortOrderParam = ViewBag.NameSortParm,
-                        currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
-                        currentSearchStringParam = ViewBag.CurrentSearchString
-                    })
-                </th>
-                <th>
+                            new
+                            {
+                                sortOrderParam = ViewBag.NameSortParm,
+                                currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
+                                currentSearchStringParam = ViewBag.CurrentSearchString
+                            })
+                </li> |
+                <li>
                     @Html.ActionLink("Price", "ProductsInACategory",
-                new
-                {
-                    sortOrderParam = ViewBag.PriceSortParm,
-                    currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
-                    currentSearchStringParam = ViewBag.CurrentSearchString
-                })
-                </th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @item.Name
-                    </td>
-                    <td>
-                        @item.Price
-                    </td>
-                </tr>
-            }
-        </table>
+                            new
+                            {
+                                sortOrderParam = ViewBag.PriceSortParm,
+                                currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
+                                currentSearchStringParam = ViewBag.CurrentSearchString
+                            })
+                </li> |
+                <div class="clearfix"> </div>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
     </div>
-    <br />
-}
-else
-{
-    <div class="text-center">Không có bản ghi nào được tìm thấy.</div>
-}
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-@Html.PagedListPager(
-    Model,
-    page => Url.Action("ProductsInACategory",
-    new
-    {
-        page,
-        sortOrderParam = ViewBag.CurrentSort,
-        currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
-        currentSearchStringParam = ViewBag.CurrentSearchString
-    }))
 
+
+    <div class="grid-product">
+        @foreach (var item in Model)
+        {
+            <div class="  product-grid">
+                <div class="content_box">
+                    <a href="single.html">
+                    </a>
+                    <div class="left-grid-view grid-view-left">
+                        <a href="single.html">
+                            <img src="@item.Image" class="img-responsive watch-right" alt="">
+                            <div class="mask">
+                                <div class="info">xem nhanh</div>
+                            </div>
+                        </a>
+                    </div>
+                    <h4><a href="#">@item.Name</a></h4>
+                    <p>@item.Description</p>
+                    @item.Price
+                </div>
+            </div>
+        }
+        <div class="clearfix"></div>
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(
+        Model,
+        page => Url.Action("ProductsInACategory",
+            new
+            {
+                page,
+                sortOrderParam = ViewBag.CurrentSort,
+                currentlySelectedCategoryIdParam = ViewBag.CurrentlySelectedCategoryId,
+                currentSearchStringParam = ViewBag.CurrentSearchString
+            }))
+    </div>
+</div>
